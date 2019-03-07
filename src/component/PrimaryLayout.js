@@ -5,12 +5,14 @@ import HomePage from './HomePage'
 // import UserAddPage from './UserAddPage'
 import NotFound from './NotFound'
 import UserLayout from './user/UserLayout'
+import LearnRedux from './redux/LearnRedux'
 
 class PrimaryLayout extends Component {
   render() {
     return (
       <div className="primary-layout">
         <header>Our React Router 4 App</header>
+        <Route path="/" component={LearnRedux} />
         <main>
           {/* 路由列表里匹配一个路由，则使用 <Switch> 来启用排他路由 */}
           <Switch>
