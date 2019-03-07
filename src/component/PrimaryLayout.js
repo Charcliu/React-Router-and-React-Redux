@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import HomePage from './HomePage'
 // import UserPage from './UserPage'
-import UserAddPage from './UserAddPage'
+// import UserAddPage from './UserAddPage'
 import NotFound from './NotFound'
 import UserLayout from './user/UserLayout'
 
@@ -16,7 +16,7 @@ class PrimaryLayout extends Component {
           <Switch>
             {/* 使用<Route exact/>达到默认路由的效果 */}
             <Route path="/" exact component={HomePage} />
-            <Route path="/users/add" component={UserAddPage} />
+            {/* <Route path="/users/add" component={UserAddPage} /> */}
             {/* <Route path="/users" component={UserPage} /> */}
             <Route path="/users" component={UserLayout} />
             <Route path="/notfound" component={NotFound} />

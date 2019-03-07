@@ -6,6 +6,9 @@ class UserNav extends Component {
     return (
       <>
         <Link to="/users">To BrowseUser Page</Link>
+        <br />
+        <Link to="/users/add">To UserAdd Page</Link>
+        <br />
         <Link to="/users/fluently">To UserProfile Page</Link>
       </>
     )
