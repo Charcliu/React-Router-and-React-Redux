@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Todo from './Todo'
+import filterTodo from '../../redux/getter/select'
 
 class TodoList extends Component {
   render() {
@@ -17,23 +18,7 @@ class TodoList extends Component {
 }
 
 const mapStateToProps = state => {
-  const { byIds, allIds } = state.todos || {}
-
-  let todos =
-    allIds && state.todos.allIds.length
-      ? allIds.map(id => (byIds ? { ...byIds[id], id } : null))
-      : null
-
-  switch (state.filter) {
-    case 'Complete':
-      todos = todos.filter(todo => todo.completed)
-      break
-    case 'UnComplete':
-      todos = todos.filter(todo => !todo.completed)
-      break
-    default:
-      break
-  }
+  const todos = filterTodo(state, state.filter)
 
   return { todos }
 }
