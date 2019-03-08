@@ -17,7 +17,8 @@ class TodoList extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+  console.log(state, ownProps)
   const todos = filterTodo(state, state.filter)
 
   return { todos }
