@@ -6,13 +6,13 @@ import HomePage from './HomePage'
 import NotFound from './NotFound'
 import UserLayout from './user/UserLayout'
 import TodoApp from './todolist/TodoApp'
+import Counter from './counter/Home'
 
 class PrimaryLayout extends Component {
   render() {
     return (
       <div className="primary-layout">
         <header>Our React Router 4 App</header>
-        <Route path="/" component={TodoApp} />
         <main>
           {/* 路由列表里匹配一个路由，则使用 <Switch> 来启用排他路由 */}
           <Switch>
@@ -22,6 +22,8 @@ class PrimaryLayout extends Component {
             {/* <Route path="/users" component={UserPage} /> */}
             <Route path="/users" component={UserLayout} />
             <Route path="/notfound" component={NotFound} />
+            <Route path="/todoList" component={TodoApp} />
+            <Route path="/counter" component={Counter} />
             {/* <Switch> 语句中, 其他路由不匹配的情况下，才会渲染重定向组件 */}
             <Redirect to="/notfound" />
           </Switch>

@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux'
 import todos from './todos'
 import filter from './filter'
+import counter from './counter'
 
 const allReducers = {
   todos,
-  filter
+  filter,
+  counter
 }
 
 const rootReducer = combineReducers(allReducers)
