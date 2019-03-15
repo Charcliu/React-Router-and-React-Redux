@@ -7,6 +7,7 @@ import NotFound from './NotFound'
 import UserLayout from './user/UserLayout'
 import TodoApp from './todolist/TodoApp'
 import Counter from './counter/Home'
+import middleWare from './middleWare/Main'
 
 class PrimaryLayout extends Component {
   render() {
@@ -24,6 +25,7 @@ class PrimaryLayout extends Component {
             <Route path="/notfound" component={NotFound} />
             <Route path="/todoList" component={TodoApp} />
             <Route path="/counter" component={Counter} />
+            <Route path="/middleWare" component={middleWare} />
             {/* <Switch> 语句中, 其他路由不匹配的情况下，才会渲染重定向组件 */}
             <Redirect to="/notfound" />
           </Switch>
