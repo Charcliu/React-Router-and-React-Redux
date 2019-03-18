@@ -7,9 +7,17 @@ import rootReducer from '../reducers'
 import thunk from 'redux-thunk'
 import promiseMiddleware from 'redux-promise'
 
+import createSagaMiddleware from 'redux-saga'
+import mySaga from '../sagas'
+
+const sagaMiddleware = createSagaMiddleware()
+
 let store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(thunk, promiseMiddleware, logger))
+  composeWithDevTools(
+    applyMiddleware(thunk, promiseMiddleware, sagaMiddleware, logger)
+  )
 )
+sagaMiddleware.run(mySaga)
 
 export default store
